@@ -1,11 +1,14 @@
 {
   "name": "vue-guthub-test",
+  "homepage": "https://yurimkr.github.io/deploy-test/",  
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rm -rf build",    
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "npm run clean && npm run build"    
   },
   "dependencies": {
     "core-js": "^2.6.5",
