@@ -1,5 +1,6 @@
 {
   "name": "vue-webpack-test",
+  "homepage": "https://yurimkr.github.io/deploy-test/", 
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "Yury Lugantsov <lugantsov@irt.de>",
