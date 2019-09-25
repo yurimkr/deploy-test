@@ -1,12 +1,19 @@
 var path = require('path')
 var webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    })
+  ],
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: './',
+    // publicPath: '/',
     filename: 'build.js'
   },
   module: {
@@ -65,9 +72,6 @@ if (process.env.NODE_ENV === 'production') {
       'process.env': {
         NODE_ENV: '"production"'
       }
-    }),
-    new HtmlWebpackPlugin({
-      template: './index.html'
     }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
